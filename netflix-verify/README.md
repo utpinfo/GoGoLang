@@ -1,38 +1,25 @@
 # NETFLIX-VERIFY
 
-最新版本: `v3.0-stable`
+最新版本: `v1.0-stable`
 
 流媒体NetFlix解锁检测脚本，使用Go语言编写。
 
 在VPS网络正常的情况下，哪怕是双栈网络也可在几秒内快速完成IPv4/IPv6的NF解锁情况判断。
 
 ## 其他常见流媒体脚本链接
-
-可以试试 [@lmc999](https://github.com/lmc999) 的全能脚本，基本包含所有你能用到的流媒体了
-
-https://github.com/lmc999/RegionRestrictionCheck
-
-其他，之前学 Go 的时候随便写写的，~~现在再回去看想钻到洞里去~~
-
 ~~DisneyPlus 解锁检测： https://github.com/sjlleo/VerifyDisneyPlus~~
 
 ~~Youtube 缓存节点、地域信息检测：https://github.com/sjlleo/TubeCheck~~
 
 ## 新特性
 
-**2022/05/21**
+**2024/04/19**
 
-添加`custom`影片检测支持，发布 `v3.0` 第一个稳定版
-
-**2022/05/20**
-
-重构`verify`、`util`、`printer` module，引入`goroutine`并发机制，提升运行效率。
-
-一年前，我在学习`Golang`的时候以研究为目的完成了这个项目，现在是时候抛弃包袱，完整重构了。
+添加`完整的IP顯示`，发布 `v1.0` 第一个稳定版
 
 ## 编译脚本
 
-编译脚本来自于 [@missuo](https://github.com/missuo) 同学的修改版，在从特表感谢~
+编译脚本来自于 [@utpinfo](https://github.com/utpinfo) 同学的修改版，在从特表感谢~
 
 ## 指定网卡出口测试
 
@@ -71,17 +58,7 @@ https://github.com/lmc999/RegionRestrictionCheck
 
 对于`amd64`（`x86_64`），请使用如下命令下载运行
 ```bash
-wget -O nf https://github.com/sjlleo/netflix-verify/releases/download/v3.1.0/nf_linux_amd64 && chmod +x nf && ./nf
-```
-
-对于`arm64`，请使用如下命令下载运行
-```bash
-wget -O nf https://github.com/sjlleo/netflix-verify/releases/download/v3.1.0/nf_linux_arm64 && chmod +x nf && ./nf
-```
-
-对于部分路由器，其SoC使用了`mips`架构，请使用如下命令下载运行
-```bash
-wget -O nf https://github.com/sjlleo/netflix-verify/releases/download/v3.1.0/nf_linux_mips && chmod +x nf && ./nf
+wget -O nf-utp https://github.com/utpinfo/GoGoLang/releases/download/v1.0.0/nf-utp && chmod +x nf-utp && ./nf-utp
 ```
 
 ## 相关名词解释
