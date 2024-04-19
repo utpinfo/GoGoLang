@@ -50,7 +50,7 @@
 
 ~~半解锁检测（Deprecated）~~
 
-## 如何食用
+## 首次運行
 
 使用前，如果您不知道您使用的是什么架构的CPU，请先使用`uname -m`查看
 
@@ -59,6 +59,21 @@
 对于`amd64`（`x86_64`），请使用如下命令下载运行
 ```bash
 wget -O nf https://github.com/utpinfo/GoGoLang/releases/download/v1.0.0/nf-utp && chmod +x nf && ./nf
+```
+
+## 如何使用
+
+偵測某影片ID是否可看( https://www.netflix.com/watch/70196252 )
+```
+./nf -custom 70196252
+```
+
+## 影片ID蒐錄
+
+偵測某影片ID是否可看( https://www.netflix.com/watch/70196252 )
+```
+81726576 （淚之女王)
+70196252 （絕命毒師)
 ```
 
 ## 相关名词解释
