@@ -65,7 +65,8 @@ wget -O nf https://github.com/utpinfo/GoGoLang/releases/download/v1.0.0/nf-utp &
 
 偵測某影片ID是否可看( https://www.netflix.com/title/70143836 )
 ```
-./nf -custom 70196252
+./nf -custom 70196252 #絕命毒師(us)
+./nf -custom 81718141 #愛愛内含光(tw)
 ```
 
 ## 影片ID蒐錄
@@ -76,6 +77,7 @@ wget -O nf https://github.com/utpinfo/GoGoLang/releases/download/v1.0.0/nf-utp &
 自製片: 81726576 (淚之女王)
 自製片: 80197526 (性愛自修課)
 解鎖片: 70196252 (絕命毒師)
+解鎖片: 81718141 (愛愛内含光-tw)
 ```
 
 ## 相关名词解释
