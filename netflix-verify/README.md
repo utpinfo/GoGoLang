@@ -63,7 +63,7 @@ wget -O nf https://github.com/utpinfo/GoGoLang/releases/download/v1.0.0/nf-utp &
 
 ## 如何使用
 
-偵測某影片ID是否可看( https://www.netflix.com/watch/70196252 )
+偵測某影片ID是否可看( https://www.netflix.com/title/70143836 )
 ```
 ./nf -custom 70196252
 ```
