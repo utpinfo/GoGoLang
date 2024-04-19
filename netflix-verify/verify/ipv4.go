@@ -21,7 +21,7 @@ func (v *IPv4Verifier) Execute() *VerifyResponse {
 
 	if v.IP, err = util.DnsResolver(4); err != nil {
 		response.StatusCode = NetworkUnrachable
-		return &response
+		return &response 
 	}
 
 	v.unblockTestChan = make(chan UnblockTestResult)
