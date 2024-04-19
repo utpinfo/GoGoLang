@@ -58,7 +58,7 @@
 
 对于`amd64`（`x86_64`），请使用如下命令下载运行
 ```bash
-wget -O nf-utp https://github.com/utpinfo/GoGoLang/releases/download/v1.0.0/nf && chmod +x nf && ./nf
+wget -O nf https://github.com/utpinfo/GoGoLang/releases/download/v1.0.0/nf-utp && chmod +x nf && ./nf
 ```
 
 ## 相关名词解释
