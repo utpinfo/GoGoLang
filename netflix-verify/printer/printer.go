@@ -1,11 +1,11 @@
 package printer
 
 import (
+	"encoding/json"
 	"fmt"
+	"github.com/sjlleo/netflix-verify/verify"
 	"io/ioutil"
 	"net/http"
-	"encoding/json"
-	"github.com/sjlleo/netflix-verify/verify"
 )
 
 const (
@@ -26,11 +26,11 @@ func Print(fr verify.FinalResult) {
 	fmt.Println(White_PREFIX + "////////////////////////////////////////////////////////////")
 	ip, region, country, timezone, err := getIP()
 	if err != nil {
-		fmt.Println(RED_PREFIX + "获取 IP 地址时出错:", err)
+		fmt.Println(RED_PREFIX+"获取 IP 地址时出错:", err)
 		return
 	}
 	printVersion()
-	fmt.Println(White_PREFIX + "國家: " + country + ", 地區: " + region+ ", 時區: " + timezone + ", IP: " + ip)
+	fmt.Println(White_PREFIX + "國家: " + country + ", 地區: " + region + ", 時區: " + timezone + ", IP: " + ip)
 	fmt.Println(White_PREFIX + "////////////////////////////////////////////////////////////")
 	printResult("4", fr.Res[1])
 	fmt.Println()
@@ -57,35 +57,35 @@ type IPInfo struct {
 }
 
 func getIP() (string, string, string, string, error) {
-    // 发送 HTTP GET 请求
-    resp, err := http.Get("https://ipinfo.io/?format=json")
-    if err != nil {
-        return "", "", "", "", fmt.Errorf("发送请求时出错: %v", err)
-    }
-    defer resp.Body.Close()
+	// 发送 HTTP GET 请求
+	resp, err := http.Get("https://ipinfo.io/?format=json")
+	if err != nil {
+		return "", "", "", "", fmt.Errorf("发送请求时出错: %v", err)
+	}
+	defer resp.Body.Close()
 
-    // 读取响应体
-    body, err := ioutil.ReadAll(resp.Body)
-    if err != nil {
-        return "", "", "", "", fmt.Errorf("读取响应时出错: %v", err)
-    }
+	// 读取响应体
+	body, err := ioutil.ReadAll(resp.Body)
+	if err != nil {
+		return "", "", "", "", fmt.Errorf("读取响应时出错: %v", err)
+	}
 
-    // 解析 JSON 数据
-    var ipInfo IPInfo
-    err = json.Unmarshal(body, &ipInfo)
-    if err != nil {
-        return "", "", "", "", fmt.Errorf("解析 JSON 数据时出错: %v", err)
-    }
+	// 解析 JSON 数据
+	var ipInfo IPInfo
+	err = json.Unmarshal(body, &ipInfo)
+	if err != nil {
+		return "", "", "", "", fmt.Errorf("解析 JSON 数据时出错: %v", err)
+	}
 
-    // 返回解析后的 IP 地址
-    return ipInfo.IP, ipInfo.Region, ipInfo.Country, ipInfo.Timezone, nil
+	// 返回解析后的 IP 地址
+	return ipInfo.IP, ipInfo.Region, ipInfo.Country, ipInfo.Timezone, nil
 }
 
 func printResult(ipVersion string, vResponse verify.VerifyResponse) {
 	fmt.Printf("[IPv%s]\n", ipVersion)
 	switch code := vResponse.StatusCode; {
 	case code < -1:
-		
+
 		fmt.Println(RED_PREFIX + "您的网络可能没有正常配置IPv" + ipVersion + "，或者没有IPv" + ipVersion + "网络接入" + RESET_PREFIX)
 	case code == -1:
 		fmt.Println(RED_PREFIX + "Netflix在您的出口IP所在的国家不提供服务" + RESET_PREFIX)

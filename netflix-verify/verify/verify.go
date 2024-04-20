@@ -3,7 +3,7 @@ package verify
 const (
 	AreaAvailableID        = 80018499
 	SelfMadeAvailableID    = 80197526
-	NonSelfMadeAvailableID = 70143836
+	NonSelfMadeAvailableID = 70196252
 
 	NetworkUnrachable       = -2
 	AreaUnavailable         = -1
