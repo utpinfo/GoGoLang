@@ -56,9 +56,14 @@
 
 **如果提示`Exec format error`是因为您下载了与您系统架构不对应的二进制文件**
 
-对于`amd64`（`x86_64`），请使用如下命令下载运行
+对于`x86_64`（`x86_64`），请使用如下命令下载运行
 ```bash
-wget -O nf https://github.com/utpinfo/GoGoLang/releases/download/v1.0.0/nf-utp && chmod +x nf && ./nf
+wget -O nf https://github.com/utpinfo/GoGoLang/releases/download/x86_64/nf && chmod +x nf && ./nf
+```
+
+对于`amd64`（`amd64`），请使用如下命令下载运行
+```bash
+wget -O nf https://github.com/utpinfo/GoGoLang/releases/download/arm64/nf && chmod +x nf && ./nf
 ```
 
 ## 如何使用
